@@ -3,7 +3,7 @@
 
 // Function declarations
 void gpio_set_output(uint8_t *direction, uint8_t pin);
-void gpio_clear_input(uint8_t *direction, uint8_t pin);
+void gpio_set_input(uint8_t *direction, uint8_t pin);
 void gpio_write(const uint8_t *direction, uint8_t *output, uint8_t value, uint8_t pin);
 void gpio_print_status(const uint8_t *direction, const uint8_t *output);
 
@@ -30,7 +30,7 @@ void gpio_set_output(uint8_t *direction, uint8_t pin)
     *direction |= (1U << pin);
 }
 
-void gpio_clear_input(uint8_t *direction, uint8_t pin)
+void gpio_set_input(uint8_t *direction, uint8_t pin)
 {
     *direction &= ~(1U << pin);
 }
